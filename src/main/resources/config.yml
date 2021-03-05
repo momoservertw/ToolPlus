@@ -1,0 +1,49 @@
+# ░░░░░░░░░░░░░░░   ToolPlus, By Momocraft♥   ░░░░░░░░░░░░░░░
+#  Spigot: https://www.spigotmc.org/resources/toolplus.70510/
+#  Wiki: https://github.com/momoservertw/ToolPlus/wiki
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+Config-Version: 1
+
+# Control blocks destroy conditions. The creative blocks can be broken by the menu.
+# Permission: toolplus.destroy.MATERIAL or toolplus.destroy.*
+# More information: https://github.com/momoservertw/ToolPlus/wiki/Destroy
+# https://minecraft.gamepedia.com/Altitude
+Void-Tool:
+  Enable: false
+  Groups:
+    # You shouldn't remove this group.
+    default:
+      Enable: true
+      Drop: false
+      List:
+        - NormalBlocks
+      Location:
+        - world
+        - world_nether
+        - world_the_end
+    all:
+      Enable: true
+      Drop: false
+      List:
+        - All
+      Ignore-List:
+        - BARRIER
+        - BEDROCK
+        - STRUCTURE_VOID
+      Location:
+        - world
+        - world_nether
+        - world_the_end
+
+Message:
+  prefix: "&7[&dToolPlus&7]&r "
+  Commands:
+    title: "&8▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩ &d&lToolPlus &8▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩▩"
+    help: "&a/tlp help &8- &7This help menu."
+    reload: "&a/tlp reload &8- &7Reloads config file."
+    version: "&f/tlp version &8- &7Checks the plugin version and updates."
+    tool: "&f/tlp tool <on/off> [mode] [player] &8- &7Enabled or disabled the void tool."
+  toggleOn: "&aEnabled to void tool mode: %group% /n &7(Using menu to remove the blocks.)"
+  toggleOnTarget: "&aEnabled to void tool mode for %targetplayer%: %group%"
+  toggleOff: "&fDisabled to void tool mode."
+  toggleOffTarget: "&fDisabled to void tool mode for %targetplayer%."

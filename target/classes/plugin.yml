@@ -1,0 +1,54 @@
+name: ToolPlus
+main: tw.momocraft.toolplus.ToolPlus
+author: Momocraft
+api-version: 1.13
+version: 1.0.0
+description: Enabled the void tool mode to remove the blocks immediately by menu.
+depend: [ CorePlus ]
+
+commands:
+  toolplus:
+    description: Displays main command menu.
+    permission: toolplus.use
+    aliases: [ brp ]
+    usage: |
+      /toolplus
+
+permissions:
+  toolplus.*:
+    description: Allows use of all commands and feature.
+    default: op
+    children:
+      toolplus.use: true
+      toolplus.command.*: true
+  toolplus.use:
+    description: Allows use of basic commands.
+    default: true
+  toolplus.command.*:
+    description: Allows use all commands.
+    default: op
+    children:
+      toolplus.command.reload: true
+      toolplus.command.version: true
+      toolplus.command.tool: true
+  toolplus.command.reload:
+    description: Allows use of command /toolplus reload.
+    default: op
+  toolplus.command.version:
+    description: Allows use of command /toolplus version.
+    default: op
+  toolplus.command.tool:
+    description: Allows use of command /toolplus tool.
+    default: op
+  toolplus.command.tool.*:
+    description: Allows use of command /toolplus tool, and select all modes.
+    default: op
+    children:
+      toolplus.command.tool.default: true
+      toolplus.command.tool.all: true
+  toolplus.command.tool.default:
+    description: Allows use of command /toolplus tool, and select the mode.
+    default: op
+  toolplus.command.tool.all:
+    description: Allows use of command /toolplus tool, and select the mode.
+    default: op
